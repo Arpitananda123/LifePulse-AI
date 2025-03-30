@@ -41,6 +41,9 @@ The platform features a dynamic landing page, intuitive user authentication, and
 ![Dashboard Screenshot](./attached_assets/DashBoardP.png)
 ---
 
+**Demo Video**
+[![Watch the demo video](./assets/video_thumbnail.png)](https://drive.google.com/file/d/FILE_ID/preview)
+
 ---
 ## Features
 
