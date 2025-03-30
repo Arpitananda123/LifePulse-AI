@@ -40,7 +40,7 @@ The platform features a dynamic landing page, intuitive user authentication, and
 **DashBoard Page**
 ![Dashboard Screenshot](./attached_assets/DashBoardP.png)
 ---
-**Demo Video**
+## Demo Video
 
 <a href="https://drive.google.com/file/d/FILE_ID/preview">
   <img src="./attached_assets/Thumbnail.png" alt="Watch the demo video" width="400">
