@@ -75,7 +75,7 @@ The platform features a dynamic landing page, intuitive user authentication, and
   - Animated feedback for successful reward redemption.
 
 - **Dynamic Landing Page:**  
-  - Interactive 3D models using libraries like Three.js.
+  - Interactive Landing Page using libraries like Three.js.
   - Clean signup/sign-in pages with email/password and Google OAuth integration.
 
 - **Light/Dark Mode Toggle:**  
