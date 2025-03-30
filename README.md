@@ -2,7 +2,8 @@
 LifePulse AI - Your Smart Companion for a Healthier Tomorrow!
 
 
-![LifePulse AI Banner](./attached_assets/Banner.png)
+<img src="./attached_assets/Banner.png" alt="Dashboard Screenshot" width="500">
+
 
 ---
 
