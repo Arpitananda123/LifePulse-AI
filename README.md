@@ -42,7 +42,10 @@ The platform features a dynamic landing page, intuitive user authentication, and
 ---
 
 **Demo Video**
-[![Watch the demo video](./assets/video_thumbnail.png)](https://drive.google.com/file/d/FILE_ID/preview)
+<a href="https://drive.google.com/file/d/FILE_ID/preview">
+  <img src="./attached_assets/Thumbnail.png" alt="Watch the demo video" width="400">
+</a>
+
 
 ---
 ## Features
