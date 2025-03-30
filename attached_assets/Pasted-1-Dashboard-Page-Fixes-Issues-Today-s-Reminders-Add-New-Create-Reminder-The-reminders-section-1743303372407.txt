@@ -1,0 +1,87 @@
+1. Dashboard Page Fixes
+Issues:
+* Today's Reminders & Add New/Create Reminder: The reminders section is not working correctly; buttons for "Add New" and "Create Reminder" are failing to function.
+* Upcoming Appointments (Schedule & Schedule Appointment): This section is currently non-functional.
+* Chatbot Error: When sending a message from the dashboard, the chatbot returns: Error Sending message 400: {“Invalid message date”, “errors”:[{“code”:”invalid_type”, “expected”:”date”, “received”:”string”, [“timestamp”], “message”:”Expected date, received string”}]}
+Bug Fixes:
+* Date Parsing: Ensure that all date fields (timestamps for messages, reminders, and appointments) are properly parsed into a date object (e.g., ISO format) before being sent to the backend.
+* UI/Button Actions: Verify that event handlers for the "Add New" and "Create Reminder" buttons are correctly wired to trigger the appropriate API calls with valid payloads.
+* Chatbot Integration: Audit the chatbot message function to convert string timestamps into valid date objects, ensuring the backend receives the proper data type.
+
+2. Reminders Tab Fixes
+Issues:
+* Create New Reminder Button: When clicking “New Reminder”, the reminder does not log and returns: “Failed to Create reminder” 400: {“message” : “Invalid reminder date”, “errors”:[{“code”:”invalid_type”, “expected”:”date”, “received”:”string”, [“time”], “message”:”Expected date, received string”}]}
+Bug Fixes:
+* Date Validation & Conversion: Before sending reminder data to the API, convert the reminder date/time from string to a proper Date object (ISO 8601 format).
+* Logging & UI Feedback: Improve error logging and display a user-friendly message that indicates the required date format if the conversion fails.
+
+3. AI Companion Section Fixes
+Issues:
+* Starting New Conversations: The chatbot returns an error similar to the dashboard when initiating a new conversation: Error Sending message 400: {“Invalid message date”, “errors”:[{“code”:”invalid_type”, “expected”:”date”, “received”:”string”, [“timestamp”], “message”:”Expected date, received string”}]}
+Bug Fixes:
+* Timestamp Correction: Ensure that each new conversation and message includes a properly formatted timestamp (using the Date object) before sending to the backend.
+* API Integration: Verify that the API endpoint for the chatbot is receiving correctly typed data, and add client-side validation to prevent misformatted dates.
+
+4. Appointment Tab Fixes
+Issues:
+* TabsContent Usage: The appointment tab triggers an error: [plugin:runtime-error-plugin] `TabsContent` must be used within `Tabs`. Click outside, press Esc key, or fix the code to dismiss. You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.
+Bug Fixes:
+* Component Hierarchy: Wrap the TabsContent component properly within a Tabs parent component according to the UI framework guidelines.
+* Vite HMR Settings: Optionally, update the Vite configuration (vite.config.js) to disable the HMR overlay if needed, though the primary fix should address the component structure.
+
+5. Home Remedies Section Fixes
+Issues:
+* AI Suggestion Output: When searching for AI-suggested remedies, the output displays an API key error message: AI Suggested Remedies for "sore throat"
+*     * API Key Required
+*     * Ingredients:
+*     * Valid OpenAI API key
+*     * Instructions:
+*     * Please provide a valid OpenAI API key to use this feature.
+*     * Effectiveness:
+Bug Fixes:
+* API Key Configuration: Validate that the OpenAI API key is correctly set in the environment/configuration file and properly passed to the API call.
+* Response Handling: Implement error handling for the remedy suggestion API to display a user-friendly message if the API key is missing or invalid, and log a clear error for debugging.
+
+6. Health Tracker Section Enhancements
+New Feature & Enhancements:
+* Dummy Data Integration: Add a module that loads dummy data for demonstration purposes (including BP, heart rate, step count, and ECG measurements).
+* Graphical Representation: Utilize libraries like Chart.js, D3.js, or Recharts to generate visually appealing, interactive graphs that display historical trends and daily readings.
+* Data Interactivity: Enable hover effects and tooltips to display detailed data points when users interact with the graphs.
+
+7. Scan Medicine Section Fixes
+Issues:
+* Scan Output Error: When scanning medicine, the results include placeholder text indicating missing API key: Scan Results
+*     * Medicine Name
+*     * API Key Required
+*     * Dosage
+*     * Please provide a valid OpenAI API key
+*     * Purpose
+*     * For demonstration purposes only
+*     * Side Effects
+*     * Cannot analyze medicine without API key
+*     * Warnings
+*     * API key missing or invalid
+*     * Disclaimer: This information is provided for reference only...
+Bug Fixes:
+* API Key Verification: Confirm that the OpenAI or relevant medicine information API key is configured correctly and accessible by the scan feature.
+* Output Formatting: Ensure the scan results are parsed correctly and display the actual medicine name, dosage, purpose, side effects, and warnings if the API key is valid.
+* Fallback Messaging: If the API key is missing or invalid, display a clear, user-friendly error with instructions on how to configure the API key rather than placeholder text.
+
+8. Reward and Token Section Fixes
+Issues:
+* Redeem Rewards Button: The button does not work, and there is no visual confirmation when rewards are redeemed.
+Bug Fixes & Enhancements:
+* Redeem Functionality: Verify the redeem rewards API endpoint integration, ensuring that tokens are properly deducted and the backend updates the user’s reward status.
+* Animation & Visual Feedback: Implement an animation (e.g., a confetti burst or a progress bar animation) that triggers upon successful redemption.
+* UI Enhancements: Redesign the Rewards and Tokens section with improved visual appeal, such as card layouts, animated counters, and clear progress indicators for earned tokens and milestones.
+
+New Feature Additions
+1. Dynamic Landing Page
+* 3D Models: Integrate interactive 3D models using libraries like Three.js or Babylon.js to create an engaging, dynamic landing page.
+* User Authentication: Include prominent Signup and Sign In buttons.
+    * Sign In/Sign Up: Create separate pages with simple forms (email and password) and integrate Google Login.
+    * Google Login Integration: Use OAuth2 for Google authentication. Ensure that upon successful login, the user’s name and profile details are fetched and displayed.
+2. Light Mode/Dark Mode Toggle
+* Toggle Button Implementation: Add a toggle button on both the Dashboard and Login pages to switch between light mode and dark mode.
+* Theming Functionality: Implement CSS/SCSS themes or use a UI framework’s built-in theming options to switch styles dynamically.
+    * Persistence: Store the user’s theme preference (e.g., in local storage) so that the setting persists across sessions.
